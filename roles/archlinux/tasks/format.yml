@@ -16,5 +16,5 @@
   command: "mkfs.vfat -F32 /dev/sda1"
 
 - name: "format /"
-  command: "mkfs.ext4 -F32 /dev/sda2"
+  command: "mkfs.ext4  /dev/sda2"
 
