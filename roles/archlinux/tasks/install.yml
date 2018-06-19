@@ -1,0 +1,5 @@
+- name: "install system /mnt"
+  command: "pacstrap -i /mnt base base-devel"
+
+- name: "change system"
+  command: "arch-chroot /mnt /bin/bash"

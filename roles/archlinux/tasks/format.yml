@@ -12,9 +12,18 @@
   command: "parted --script --align optimal /dev/sda -- mkpart ext4  513MiB 2GB"
 
 
-- name: "format"
+- name: "format /boot"
   command: "mkfs.vfat -F32 /dev/sda1"
 
 - name: "format /"
   command: "mkfs.ext4  /dev/sda2"
+
+- name: "mount / "
+  command: "mount /dev/sda2 /mnt"
+
+- name: "create /mnt/boot directory"
+  command: "mkdir /mnt/boot"
+
+- name: "mount /boot"
+  command: "mount /dev/sda1 /mnt/boot"
 
