@@ -1,8 +1,12 @@
 - name: "create partition table"
-  command: "parted --script --align optimal /dev/vda -- mklabel gpt"
+  command: "parted --script --align optimal /dev/sda -- mklabel gpt"
 
 - name: "create boot partiton"
-  command: "parted --script --align optimal /dev/sda1 -- mkpart bios_boot fat32 1MiB 5Mib"
+  command: "parted --script --align optimal /dev/sda -- mkpart esp fat32 1MiB 5MiB"
 
-- name: "set boot partition"
-  command: "parted --script --align optimal /dev/sda1 -- set 1 bios_grub on"
+  #- name: "set boot partition"
+  # command: "parted --script --align optimal /dev/sda -- set 1 bios_grub on"
+
+
+- name: "Create / partition"
+  command: "parted --script --align optimal /dev/sda -- mkpart ext4 fat32 5MiB 2GB"
