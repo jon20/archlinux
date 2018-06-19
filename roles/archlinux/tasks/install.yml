@@ -1,5 +1,38 @@
 - name: "install system /mnt"
   command: "pacstrap  /mnt base base-devel"
 
+- name: "create fsab"
+  command: "genfstab -U -p /mnt >> /mnt/etc/fsab"
+
 - name: "change system"
   command: "arch-chroot /mnt /bin/bash"
+
+- name: "set area"
+  command: "ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime"
+
+- name: "setting time"
+  command: "hwclock -u -w"
+
+- name: "setting hostname"
+  command: "echo jon > /etc/hostname"
+
+
+- name: "enable network"
+  command: "systemctl enable dhcpcd.service"
+
+
+- name: "install grub"
+  command: "pacman -S grub dosfstools efibootmgr"
+
+- name: "grub"
+  command: "grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck --debug"
+
+
+- name: "mkconfig"
+  command: "grub-mkconfig -o /boot/grub/grub.cfg"
+
+- name: "option"
+  command: "mkdir /boot/EFI/boot"
+
+- name: "option2"
+  command: "cp /boot/EFI/arch_grub/grubx64.efi  /boot/EFI/boot/bootx64.efi"
