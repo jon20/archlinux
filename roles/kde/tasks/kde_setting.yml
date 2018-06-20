@@ -1,0 +1,5 @@
+- name: "kde install"
+  command: "pacman -S plasma sddm"
+
+- name: "enable sddm"
+  command: "systemctl enable sddm"

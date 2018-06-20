@@ -1,0 +1,11 @@
+- name: "install "
+  command: "pacman -S firefox --noconfirm"
+
+- name: "install kde application"
+  command: "pacman -S kde-applications --noconfirm"
+
+- name: "install neovim"
+  command: "pacman -S neovim --noconfirm"
+
+- name: "install fcitx"
+  aommand: "pacman -S fcitx --noconfirm"

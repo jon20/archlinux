@@ -1,4 +1,4 @@
-
+- import_tasks: user.yml
 
 - name: "setting time"
   command: "hwclock -u -w"
@@ -17,14 +17,12 @@
 - name: "creategrub"
   command: "grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck"
 
-- name: "grub"
+- name: "mkconfig"
   command: "grub-mkconfig -o /boot/grub/grub.cfg"
 
-
-
-- name: "option"
+- name: "install intel-ucode"
   command: "pacman -S intel-ucode --noconfirm"
 
-- name: "option2"
+- name: "remkconfig"
   command: "grub-mkconfig -o /boot/grub/grub.cfg"
 

@@ -1,0 +1,9 @@
+- hosts: localhost
+  connection: local
+  roles:
+      - install 
+
+  vars_prompt:
+      - name: "archlinux_username"
+        prompt: "Enter your username"
+        private: no
