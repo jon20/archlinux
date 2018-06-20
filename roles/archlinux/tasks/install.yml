@@ -19,21 +19,20 @@
   command: "systemctl enable dhcpcd.service"
 
 
-- name: "create initframs"
-  command: "sed -i.backup '/^HOOKS=/ s/ filesystems / encrypt lvm2 resume filesystems /' /etc/mkinitcpio.conf"
+- name: "install"
+  command: "pacman -S grub efibootmgr --noconfirm"
+
+- name: "creategrub"
+  command: "grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck"
 
 - name: "grub"
-  command: "mkinitcpio --preset linux"
+  command: "grub-mkconfig -o /boot/grub/grub.cfg"
 
 
-- name: "mkconfig"
-  command: "bootctl --path=/boot install"
 
 - name: "option"
-  command: "echo 'default arch' >> /boot/loader/loader.conf"
+  command: "pacman -S intel-ucode --noconfirm"
 
 - name: "option2"
-  command: "echo 'timeout 5' >> /boot/loader/loader.conf"
+  command: "grub-mkconfig -o /boot/grub/grub.cfg"
 
-- name: "option2"
-  command: "cat << __ARCH_CONF__ > /boot/loader/entries/arch.conf"
