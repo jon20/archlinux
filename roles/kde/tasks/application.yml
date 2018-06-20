@@ -8,4 +8,4 @@
   command: "pacman -S neovim --noconfirm"
 
 - name: "install fcitx"
-  aommand: "pacman -S fcitx --noconfirm"
+  command: "pacman -S fcitx --noconfirm"
