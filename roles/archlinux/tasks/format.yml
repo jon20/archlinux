@@ -18,8 +18,6 @@
 - name: "format /"
   command: "mkfs.ext4  /dev/sda2"
 
-- name: "create /mnt directory"
-  command: "mkdir /mnt"
 
 - name: "mount / "
   command: "mount /dev/sda2 /mnt"
