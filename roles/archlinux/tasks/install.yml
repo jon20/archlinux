@@ -7,8 +7,6 @@
 - name: "change system"
   command: "arch-chroot /mnt /bin/bash"
 
-- name: "set area"
-  command: "ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime"
 
 - name: "setting time"
   command: "hwclock -u -w"
