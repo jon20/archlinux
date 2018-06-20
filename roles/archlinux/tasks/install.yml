@@ -5,7 +5,7 @@
   command: "genfstab -U -p /mnt >> /mnt/etc/fsab"
 
 - name: "change system"
-  command: "arch-chroot /mnt /bin/bash"
+  shell: "arch-chroot /mnt /bin/bash"
 
 
 - name: "setting time"
