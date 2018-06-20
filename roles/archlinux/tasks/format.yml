@@ -9,7 +9,7 @@
 
 
 - name: "Create / partition"
-  command: "parted --script --align optimal /dev/sda -- mkpart ext4  513MiB 2GB"
+  command: "parted --script --align optimal /dev/sda -- mkpart ext4  513MiB 10GB"
 
 
 - name: "format /boot"
@@ -17,6 +17,9 @@
 
 - name: "format /"
   command: "mkfs.ext4  /dev/sda2"
+
+- name: "create /mnt directory"
+  command: "mkdir /mnt"
 
 - name: "mount / "
   command: "mount /dev/sda2 /mnt"

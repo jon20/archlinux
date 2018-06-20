@@ -22,7 +22,7 @@
 
 
 - name: "install grub"
-  command: "pacman -S grub dosfstools efibootmgr"
+  command: "pacman -S grub dosfstools efibootmgr  --noconfirm"
 
 - name: "grub"
   command: "grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck --debug"
