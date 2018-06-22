@@ -12,7 +12,7 @@ This ansible playbook can easily install Arch linux
 
 - run playbook  
 ```
- $ git clone https://jon20/github.com/archlinux.git
+ $ git clone https://github.com/jon20/archlinux.git
  $ cd archlinux  
  $ ansible-playbook partitioning.yml  
 ```
