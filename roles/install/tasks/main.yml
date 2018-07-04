@@ -26,3 +26,6 @@
 - name: "remkconfig"
   command: "grub-mkconfig -o /boot/grub/grub.cfg"
 
+- name: "install wifi"
+  command: "pacman -S wpa_supplicant iw dialog --noconfirm"
+
