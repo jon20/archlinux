@@ -1,0 +1,24 @@
+- name: "setting time"
+  command: "hwclock -u -w"
+
+- name: "setting hostname"
+  command: "echo jon > /etc/hostname"
+
+
+- name: "enable network"
+  command: "systemctl enable dhcpcd.service"
+
+- name: "run mkinitcpio "
+  command: "mkinitcpio -p linux"
+
+- name: "install intel-ucode"
+  command: "pacman -S intel-ucode --noconfirm"
+
+- name: "install bootloader"
+  command: "bootctl --path=/boot install"
+
+- name: "PARTUUID"
+  command: "blkid -s PARTUUID -o value /dev/sda2 >> /boot/loader/entries/arch.conf"
+
+- name: "install wifi"
+  command: "pacman -S wpa_supplicant iw dialog --noconfirm"
