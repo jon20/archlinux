@@ -9,7 +9,7 @@
 
 
 - name: "Create / partition"
-  command: "parted --script --align optimal /dev/sda -- mkpart ext4  513MiB 10GB"
+  command: "parted --script --align optimal /dev/sda -- mkpart ext4  513MiB 113GB"
 
 
 - name: "format /boot"
