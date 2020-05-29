@@ -2,5 +2,5 @@
   command: "pacstrap  /mnt base base-devel"
 
 - name: "create fsab"
-  command: "genfstab -U -p /mnt >> /mnt/etc/fsab"
+  command: "genfstab -U -p /mnt >> /mnt/etc/fstab"
 
